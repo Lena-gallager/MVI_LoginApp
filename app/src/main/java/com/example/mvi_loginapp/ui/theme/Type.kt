@@ -11,9 +11,9 @@ import androidx.compose.ui.unit.sp
 import com.example.mvi_loginapp.R
 
 private val MozillaFontFamily = FontFamily(
-    Font(R.font.font_mozillaHeadline_light, FontWeight.Light, FontStyle.Normal),
-    Font(R.font.font_mozillaHeadline_regular, FontWeight.Normal, FontStyle.Normal),
-    Font(R.font.font_mozillaHeadline_bold, FontWeight.Bold, FontStyle.Normal),
+    Font(R.font.font_mozilla_headline_light, FontWeight.Light, FontStyle.Normal),
+    Font(R.font.font_mozilla_headline_regular, FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.font_mozilla_headline_bold, FontWeight.Bold, FontStyle.Normal),
 )
 
 @Immutable

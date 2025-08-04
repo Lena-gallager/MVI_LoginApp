@@ -1,9 +1,10 @@
-package com.example.mvi_loginapp
+package com.example.mvi_loginapp.ui.feature.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.example.mvi_loginapp.ui.navigation.AppNavigation
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
@@ -12,7 +13,7 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-
+                AppNavigation()
             }
         }
     }

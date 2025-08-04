@@ -4,6 +4,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import com.example.mvi_loginapp.ui.common.myiconpack.IcApple
 import com.example.mvi_loginapp.ui.common.myiconpack.IcFacebook
 import com.example.mvi_loginapp.ui.common.myiconpack.IcGoogle
+import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
+import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
+import com.example.mvi_loginapp.ui.common.myiconpack.IcPhoneNumber
 import kotlin.collections.List as ____KtList
 
 public object MyIconPack
@@ -15,6 +18,6 @@ public val MyIconPack.AllIcons: ____KtList<ImageVector>
     if (__AllIcons != null) {
       return __AllIcons!!
     }
-    __AllIcons= listOf(IcApple, IcFacebook, IcGoogle)
+    __AllIcons= listOf(IcApple, IcFacebook, IcGoogle, IcEmail, IcPassword, IcPhoneNumber)
     return __AllIcons!!
   }
