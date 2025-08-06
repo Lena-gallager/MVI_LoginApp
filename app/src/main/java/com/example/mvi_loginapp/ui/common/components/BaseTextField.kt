@@ -5,17 +5,15 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.theme.AppTheme
+import com.example.mvi_loginapp.ui.common.defaults.TextFieldColors
 
 @Composable
-fun TextFieldComponent(
+fun BaseTextField(
     modifier: Modifier = Modifier,
     value: String,
     onValueChange: (String) -> Unit,
@@ -23,7 +21,7 @@ fun TextFieldComponent(
     leadingIconVector: ImageVector,
 ) {
     TextField(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = modifier.fillMaxWidth(),
         onValueChange = onValueChange,
         value = value,
         singleLine = true,
@@ -39,14 +37,6 @@ fun TextFieldComponent(
                 contentDescription = null,
             )
         },
-        colors = TextFieldDefaults.colors(
-            focusedIndicatorColor = Color.Transparent,
-            unfocusedIndicatorColor = Color.Transparent,
-            disabledIndicatorColor = Color.Transparent,
-            cursorColor = AppTheme.colors.onActionSurface,
-            focusedLabelColor = AppTheme.colors.onActionSurface,
-            focusedContainerColor = AppTheme.colors.actionSurface,
-            unfocusedContainerColor = AppTheme.colors.actionSurface,
-        )
+        colors = TextFieldColors.get(),
     )
 }

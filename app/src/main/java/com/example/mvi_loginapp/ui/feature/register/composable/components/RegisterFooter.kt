@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.feature.login.composable.components
+package com.example.mvi_loginapp.ui.feature.register.composable.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -7,28 +7,22 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.ui.common.components.LoginSocialMediaSection
 import com.example.mvi_loginapp.ui.common.components.TextButtonComponent
-import com.example.mvi_loginapp.ui.feature.login.LoginContract
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
 @Composable
-fun LoginFooter(
+fun RegisterFooter(
     modifier: Modifier = Modifier,
-    onEventSent: (event: LoginContract.Event) -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -38,7 +32,7 @@ fun LoginFooter(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextButtonComponent(
-            text = "Login",
+            text = "Create Account",
             onClick = {},
         )
         Text(
@@ -50,14 +44,14 @@ fun LoginFooter(
         LoginSocialMediaSection()
         Row {
             Text(
-                text = "Don't have an account?",
+                text = "Already have an Account?",
                 color = AppTheme.colors.onBackground,
             )
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 modifier = Modifier
-                    .clickable(onClick = { onEventSent(LoginContract.Event.ButtonClick.OnRegisterClicked) }),
-                text = "Sign-up",
+                    .clickable(onClick = {}),
+                text = "Sign-in",
                 color = AppTheme.colors.onActionSurface,
                 fontWeight = FontWeight.Bold,
             )
@@ -67,8 +61,6 @@ fun LoginFooter(
 
 @Preview
 @Composable
-private fun LoginFooterPreview() {
-    LoginFooter(
-        onEventSent = {}
-    )
+private fun RegisterFooterPreview() {
+    RegisterFooter()
 }

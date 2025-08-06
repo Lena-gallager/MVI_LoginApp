@@ -1,43 +1,43 @@
-package com.example.mvi_loginapp.ui.feature.login
+package com.example.mvi_loginapp.ui.feature.register
 
 import com.example.mvi_loginapp.ui.base.ViewEvent
 import com.example.mvi_loginapp.ui.base.ViewSideEffect
 import com.example.mvi_loginapp.ui.base.ViewState
 
-class LoginContract {
+class RegisterContract {
 
     sealed class Event : ViewEvent {
 
         data class OnEmailChanged(val newValue: String) : Event()
 
+        data class OnPhoneChanged(val newValue: String) : Event()
+
         data class OnPasswordChanged(val newValue: String) : Event()
 
-        sealed class ButtonClick : Event() {
+        data class OnConfirmPasswordChanged(val newValue: String) : Event()
 
-            object OnForgotPasswordCLicked : Event()
+        sealed class ButtonClick() {
 
-            object OnLoginClicked : Event()
+            object OnLoginClick : ButtonClick()
 
-            object OnRegisterClicked : Event()
-
-            object onFacebookClicked : Event()
-
-            object onGoogleClicked : Event()
-
-            object onAppleClicked : Event()
+            object OnRegisterClick : ButtonClick()
         }
     }
 
     data class State(
         val email: String,
+        val phone: String,
         val password: String,
+        val confirmPassword: String,
     ) : ViewState {
 
         companion object {
 
             val DEFAULT = State(
                 email = "",
+                phone = "",
                 password = "",
+                confirmPassword = "",
             )
         }
     }
@@ -48,7 +48,7 @@ class LoginContract {
 
             object OnBackPressed : Navigation()
 
-            object ToRegistration : Navigation()
+            object ToLogin : Navigation()
         }
     }
 }
