@@ -14,13 +14,14 @@ import com.example.mvi_loginapp.ui.common.components.BaseTextField
 import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
 import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
 import com.example.mvi_loginapp.ui.common.myiconpack.IcPhoneNumber
-import com.example.mvi_loginapp.ui.feature.register.RegisterContract
+import com.example.mvi_loginapp.ui.feature.register.contract.RegisterEvent
+import com.example.mvi_loginapp.ui.feature.register.contract.RegisterState
 
 @Composable
 fun RegisterInputsSection(
     modifier: Modifier = Modifier,
-    state: RegisterContract.State,
-    onEventSent: (event: RegisterContract.Event) -> Unit,
+    state: RegisterState,
+    onEventSent: (event: RegisterEvent) -> Unit,
 ) {
     Column(
         modifier = modifier.fillMaxWidth(),
@@ -28,28 +29,28 @@ fun RegisterInputsSection(
         Spacer(modifier = Modifier.height(16.dp))
         BaseTextField(
             value = state.email,
-            onValueChange = { onEventSent(RegisterContract.Event.OnEmailChanged(it)) },
+            onValueChange = { onEventSent(RegisterEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
             leadingIconVector = MyIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         BaseTextField(
             value = state.phone,
-            onValueChange = { onEventSent(RegisterContract.Event.OnPhoneChanged(it)) },
+            onValueChange = { onEventSent(RegisterEvent.OnPhoneChanged(it)) },
             labelText = "Enter your number",
             leadingIconVector = MyIconPack.IcPhoneNumber,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.password,
-            onValueChange = { onEventSent(RegisterContract.Event.OnPasswordChanged(it)) },
+            onValueChange = { onEventSent(RegisterEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
             leadingIconVector = MyIconPack.IcPassword,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.confirmPassword,
-            onValueChange = { onEventSent(RegisterContract.Event.OnConfirmPasswordChanged(it)) },
+            onValueChange = { onEventSent(RegisterEvent.OnConfirmPasswordChanged(it)) },
             labelText = "Confirm your password",
             leadingIconVector = MyIconPack.IcPassword,
         )
@@ -60,7 +61,7 @@ fun RegisterInputsSection(
 @Composable
 private fun RegisterInputsSectionPreview() {
     RegisterInputsSection(
-        state = RegisterContract.State.DEFAULT,
+        state = RegisterState.DEFAULT,
         onEventSent = {},
     )
 }

@@ -10,19 +10,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.ui.common.components.TopAppBar
-import com.example.mvi_loginapp.ui.feature.register.RegisterContract
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterFooter
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterHeader
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterInputsSection
-import kotlinx.coroutines.flow.Flow
+import com.example.mvi_loginapp.ui.feature.register.contract.RegisterEvent
+import com.example.mvi_loginapp.ui.feature.register.contract.RegisterState
 
 @Composable
 fun RegisterScreen(
     modifier: Modifier = Modifier,
-    state: RegisterContract.State,
-    effectFlow: Flow<RegisterContract.Effect>?,
-    onEventSent: (event: RegisterContract.Event) -> Unit,
-    onNavigationRequested: (navigationEffect: RegisterContract.Effect.Navigation) -> Unit,
+    state: RegisterState,
+    onEventSent: (event: RegisterEvent) -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -30,7 +28,7 @@ fun RegisterScreen(
             .padding(horizontal = 24.dp)
     ) {
         TopAppBar(
-            onBackClicked = {},
+            onBackClicked = { onEventSent(RegisterEvent.OnBackPressed) },
         )
         RegisterHeader()
         Spacer(modifier = Modifier.height(40.dp))
@@ -43,6 +41,7 @@ fun RegisterScreen(
             modifier = Modifier
                 .weight(1f)
                 .padding(bottom = 16.dp),
+            onEventSent = onEventSent,
         )
     }
 }
@@ -51,9 +50,7 @@ fun RegisterScreen(
 @Composable
 private fun RegisterScreenPreview() {
     RegisterScreen(
-        state = RegisterContract.State.DEFAULT,
-        effectFlow = null,
+        state = RegisterState.DEFAULT,
         onEventSent = {},
-        onNavigationRequested = {},
     )
 }

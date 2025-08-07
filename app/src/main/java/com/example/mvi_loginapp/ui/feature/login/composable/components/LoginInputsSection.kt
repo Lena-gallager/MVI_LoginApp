@@ -17,28 +17,29 @@ import com.example.mvi_loginapp.ui.common.components.PasswordTextField
 import com.example.mvi_loginapp.ui.common.components.BaseTextField
 import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
 import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
-import com.example.mvi_loginapp.ui.feature.login.LoginContract
+import com.example.mvi_loginapp.ui.feature.login.contract.LoginEvent
+import com.example.mvi_loginapp.ui.feature.login.contract.LoginState
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
 @Composable
 fun LoginInputsSection(
     modifier: Modifier = Modifier,
-    state: LoginContract.State,
-    onEventSent: (event: LoginContract.Event) -> Unit,
+    state: LoginState,
+    onEventSent: (event: LoginEvent) -> Unit,
 ) {
     Column(
         modifier = modifier.fillMaxWidth(),
     ) {
         BaseTextField(
             value = state.email,
-            onValueChange = { onEventSent(LoginContract.Event.OnEmailChanged(it)) },
+            onValueChange = { onEventSent(LoginEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
             leadingIconVector = MyIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.password,
-            onValueChange = { onEventSent(LoginContract.Event.OnPasswordChanged(it)) },
+            onValueChange = { onEventSent(LoginEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
             leadingIconVector = MyIconPack.IcPassword,
         )
@@ -47,7 +48,7 @@ fun LoginInputsSection(
             text = "Forgot password?",
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable(onClick = { onEventSent(LoginContract.Event.ButtonClick.OnForgotPasswordCLicked) }),
+                .clickable(onClick = { onEventSent(LoginEvent.OnForgotPasswordCLicked) }),
             textAlign = TextAlign.End,
             style = AppTheme.typography.titleSmall,
             color = AppTheme.colors.onActionSurface,
@@ -60,7 +61,7 @@ fun LoginInputsSection(
 @Composable
 private fun LoginInputsSectionPreview() {
     LoginInputsSection(
-        state = LoginContract.State.DEFAULT,
+        state = LoginState.DEFAULT,
         onEventSent = {},
     )
 }

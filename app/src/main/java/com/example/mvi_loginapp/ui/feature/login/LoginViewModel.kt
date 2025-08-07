@@ -1,17 +1,19 @@
 package com.example.mvi_loginapp.ui.feature.login
 
 import com.example.mvi_loginapp.ui.base.BaseViewModel
+import com.example.mvi_loginapp.ui.feature.login.contract.LoginEvent
+import com.example.mvi_loginapp.ui.feature.login.contract.LoginNavigation
+import com.example.mvi_loginapp.ui.feature.login.contract.LoginState
 
-class LoginViewModel :
-    BaseViewModel<LoginContract.Event, LoginContract.State, LoginContract.Effect>() {
+class LoginViewModel : BaseViewModel<LoginEvent, LoginState, LoginNavigation>() {
 
-    override fun setInitialState(): LoginContract.State = LoginContract.State.DEFAULT
+    override fun setInitialState(): LoginState = LoginState.DEFAULT
 
-    override fun handleEvents(event: LoginContract.Event) {
-        when(event) {
-            is LoginContract.Event.OnEmailChanged -> setState { copy(email = event.newValue) }
-            is LoginContract.Event.OnPasswordChanged -> setState { copy(password = event.newValue) }
-            is LoginContract.Event.ButtonClick.OnRegisterClicked -> setEffect { LoginContract.Effect.Navigation.ToRegistration }
+    override fun handleEvents(event: LoginEvent) {
+        when (event) {
+            is LoginEvent.OnEmailChanged -> setState { copy(email = event.newValue) }
+            is LoginEvent.OnPasswordChanged -> setState { copy(password = event.newValue) }
+            is LoginEvent.OnRegisterClicked -> setNavigation { LoginNavigation.ToRegistrationScreen }
             else -> {}
         }
     }

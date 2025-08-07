@@ -18,11 +18,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.ui.common.components.LoginSocialMediaSection
 import com.example.mvi_loginapp.ui.common.components.TextButtonComponent
+import com.example.mvi_loginapp.ui.feature.register.contract.RegisterEvent
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
 @Composable
 fun RegisterFooter(
     modifier: Modifier = Modifier,
+    onEventSent: (event: RegisterEvent) -> Unit,
 ) {
     Column(
         modifier = modifier
@@ -50,7 +52,7 @@ fun RegisterFooter(
             Spacer(modifier = Modifier.width(8.dp))
             Text(
                 modifier = Modifier
-                    .clickable(onClick = {}),
+                    .clickable(onClick = { onEventSent(RegisterEvent.LoginClicked) }),
                 text = "Sign-in",
                 color = AppTheme.colors.onActionSurface,
                 fontWeight = FontWeight.Bold,
@@ -62,5 +64,7 @@ fun RegisterFooter(
 @Preview
 @Composable
 private fun RegisterFooterPreview() {
-    RegisterFooter()
+    RegisterFooter(
+        onEventSent = {},
+    )
 }

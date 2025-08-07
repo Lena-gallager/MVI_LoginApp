@@ -1,12 +1,12 @@
 package com.example.mvi_loginapp.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.mvi_loginapp.ui.feature.register.composable.RegisterScreen
+import com.example.mvi_loginapp.ui.feature.login.navigation.LoginScreenDestination
+import com.example.mvi_loginapp.ui.feature.register.navigation.RegisterScreenDestination
 
 @Composable
 fun AppNavigation() {
@@ -39,4 +39,8 @@ object Navigation {
 
 fun NavController.navigateToRegistration() {
     navigate(route = Navigation.Routes.REGISTRATION)
+}
+
+fun NavController.navigateToLogin() {
+    navigate(route = Navigation.Routes.LOGIN)
 }

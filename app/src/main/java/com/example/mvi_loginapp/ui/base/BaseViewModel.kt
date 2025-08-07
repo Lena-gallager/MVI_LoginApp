@@ -14,11 +14,9 @@ interface ViewEvent
 
 interface ViewState
 
-interface ViewSideEffect
+interface ViewNavigation
 
-const val SIDE_EFFECTS_KEY = "side-effects_key"
-
-abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Effect: ViewSideEffect> : ViewModel() {
+abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Navigation: ViewNavigation> : ViewModel() {
 
     abstract fun setInitialState(): UiState
     abstract fun handleEvents(event: Event)
@@ -30,8 +28,8 @@ abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Effect: ViewS
 
     private val _event: MutableSharedFlow<Event> = MutableSharedFlow()
 
-    private val _effect: Channel<Effect> = Channel()
-    val effect = _effect.receiveAsFlow()
+    private val _navigation: Channel<Navigation> = Channel()
+    val navigation = _navigation.receiveAsFlow()
 
     init {
         subscribeToEvents()
@@ -54,8 +52,8 @@ abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Effect: ViewS
         _viewState.value = newState
     }
 
-    protected fun setEffect(builder: () -> Effect) {
+    protected fun setNavigation(builder: () -> Navigation) {
         val effectValue = builder()
-        viewModelScope.launch { _effect.send(effectValue) }
+        viewModelScope.launch { _navigation.send(effectValue) }
     }
 }
