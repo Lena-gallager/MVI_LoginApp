@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.common.myiconpack
+package com.example.mvi_loginapp.ui.common.icons.socialMedia
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -6,12 +6,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
-import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.ImageVector.Builder
@@ -19,20 +16,29 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
-import kotlin.Unit
 
-public val MyIconPack.IcGoogle: ImageVector
+val SocialMediaIconPack.IcGoogle: ImageVector
     get() {
-        if (_icGoogle != null) {
-            return _icGoogle!!
-        }
-        _icGoogle = Builder(name = "IcGoogle", defaultWidth = 15.0.dp, defaultHeight = 16.0.dp,
-                viewportWidth = 15.0f, viewportHeight = 16.0f).apply {
+        if (_icGoogle != null) return _icGoogle!!
+        _icGoogle = Builder(
+            name = "IcGoogle",
+            defaultWidth = 15.0.dp,
+            defaultHeight = 16.0.dp,
+            viewportWidth = 15.0f,
+            viewportHeight = 16.0f,
+        ).apply {
             group {
-                path(fill = SolidColor(Color(0xFF007BFF)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFF007BFF)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(7.5f, 6.671f)
                     verticalLineTo(9.501f)
                     horizontalLineTo(11.433f)
@@ -43,9 +49,17 @@ public val MyIconPack.IcGoogle: ImageVector
                     lineTo(7.5f, 6.671f)
                     close()
                 }
-                path(fill = SolidColor(Color(0xFF34A853)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFF34A853)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(3.404f, 9.391f)
                     lineTo(2.87f, 9.8f)
                     lineTo(0.976f, 11.275f)
@@ -57,9 +71,17 @@ public val MyIconPack.IcGoogle: ImageVector
                     lineTo(3.404f, 9.391f)
                     close()
                 }
-                path(fill = SolidColor(Color(0xFFFBBC05)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFFFBBC05)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(0.976f, 4.725f)
                     curveTo(0.478f, 5.708f, 0.192f, 6.817f, 0.192f, 8.0f)
                     curveTo(0.192f, 9.182f, 0.478f, 10.292f, 0.976f, 11.275f)
@@ -69,9 +91,17 @@ public val MyIconPack.IcGoogle: ImageVector
                     lineTo(0.976f, 4.725f)
                     close()
                 }
-                path(fill = SolidColor(Color(0xFFEA4335)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFFEA4335)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(7.5f, 3.602f)
                     curveTo(8.576f, 3.602f, 9.533f, 3.974f, 10.297f, 4.692f)
                     lineTo(12.389f, 2.599f)
@@ -82,8 +112,8 @@ public val MyIconPack.IcGoogle: ImageVector
                     close()
                 }
             }
-        }
-        .build()
+        }.build()
+
         return _icGoogle!!
     }
 
@@ -91,8 +121,8 @@ private var _icGoogle: ImageVector? = null
 
 @Preview
 @Composable
-private fun Preview(): Unit {
+private fun Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = MyIconPack.IcGoogle, contentDescription = "")
+        Image(imageVector = SocialMediaIconPack.IcGoogle, contentDescription = "")
     }
 }

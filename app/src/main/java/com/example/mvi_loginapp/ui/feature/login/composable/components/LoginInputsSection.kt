@@ -10,12 +10,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
 import com.example.mvi_loginapp.ui.common.components.PasswordTextField
 import com.example.mvi_loginapp.ui.common.components.BaseTextField
 import com.example.mvi_loginapp.ui.common.components.ClickableText
-import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
-import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
+import com.example.mvi_loginapp.ui.common.icons.common.CommonIconPack
+import com.example.mvi_loginapp.ui.common.icons.common.IcEmail
+import com.example.mvi_loginapp.ui.common.icons.common.IcPassword
 import com.example.mvi_loginapp.ui.feature.login.contract.LoginEvent
 import com.example.mvi_loginapp.ui.feature.login.contract.LoginState
 import com.example.mvi_loginapp.ui.theme.AppTheme
@@ -33,14 +33,14 @@ fun LoginInputsSection(
             value = state.email,
             onValueChange = { onEventSent(LoginEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
-            leadingIconVector = MyIconPack.IcEmail,
+            leadingIconVector = CommonIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.password,
             onValueChange = { onEventSent(LoginEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
-            leadingIconVector = MyIconPack.IcPassword,
+            leadingIconVector = CommonIconPack.IcPassword,
         )
         Spacer(modifier = Modifier.height(16.dp))
         Box(

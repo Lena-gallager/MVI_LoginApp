@@ -8,12 +8,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
 import com.example.mvi_loginapp.ui.common.components.PasswordTextField
 import com.example.mvi_loginapp.ui.common.components.BaseTextField
-import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
-import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
-import com.example.mvi_loginapp.ui.common.myiconpack.IcPhoneNumber
+import com.example.mvi_loginapp.ui.common.icons.common.CommonIconPack
+import com.example.mvi_loginapp.ui.common.icons.common.IcEmail
+import com.example.mvi_loginapp.ui.common.icons.common.IcPassword
+import com.example.mvi_loginapp.ui.common.icons.common.IcPhoneNumber
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterEvent
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterState
 
@@ -31,28 +31,28 @@ fun RegisterInputsSection(
             value = state.email,
             onValueChange = { onEventSent(RegisterEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
-            leadingIconVector = MyIconPack.IcEmail,
+            leadingIconVector = CommonIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         BaseTextField(
             value = state.phone,
             onValueChange = { onEventSent(RegisterEvent.OnPhoneChanged(it)) },
             labelText = "Enter your number",
-            leadingIconVector = MyIconPack.IcPhoneNumber,
+            leadingIconVector = CommonIconPack.IcPhoneNumber,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.password,
             onValueChange = { onEventSent(RegisterEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
-            leadingIconVector = MyIconPack.IcPassword,
+            leadingIconVector = CommonIconPack.IcPassword,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
             value = state.confirmPassword,
             onValueChange = { onEventSent(RegisterEvent.OnConfirmPasswordChanged(it)) },
             labelText = "Confirm your password",
-            leadingIconVector = MyIconPack.IcPassword,
+            leadingIconVector = CommonIconPack.IcPassword,
         )
     }
 }

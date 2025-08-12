@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.common.myiconpack
+package com.example.mvi_loginapp.ui.common.icons.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -16,27 +16,42 @@ import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
-import kotlin.Unit
 
-public val MyIconPack.IcEmail: ImageVector
+//todo есть ли способо задавать иконки лушим способом
+// (хотя быизбавиться от "Receiver parameter is never used" и "Object or top-level property name '_icEmail' should not start with an underscore")
+val CommonIconPack.IcEmail: ImageVector
     get() {
-        if (_icEmail != null) {
-            return _icEmail!!
-        }
-        _icEmail = Builder(name = "IcEmail", defaultWidth = 20.0.dp, defaultHeight = 20.0.dp,
-                viewportWidth = 20.0f, viewportHeight = 20.0f).apply {
-            path(fill = SolidColor(Color(0x00000000)), stroke = SolidColor(Color(0xFF757575)),
-                    strokeLineWidth = 1.25f, strokeLineCap = Round, strokeLineJoin =
-                    StrokeJoin.Companion.Round, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+        if (_icEmail != null) return _icEmail!!
+
+        _icEmail = Builder(
+            name = "IcEmail",
+            defaultWidth = 20.0.dp,
+            defaultHeight = 20.0.dp,
+            viewportWidth = 20.0f,
+            viewportHeight = 20.0f,
+        ).apply {
+            path(
+                fill = SolidColor(Color(0x00000000)),
+                stroke = SolidColor(Color(0xFF757575)),
+                strokeLineWidth = 1.25f,
+                strokeLineCap = Round,
+                strokeLineJoin = StrokeJoin.Companion.Round,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
                 moveTo(5.833f, 7.083f)
                 lineTo(8.285f, 8.533f)
                 curveTo(9.714f, 9.378f, 10.286f, 9.378f, 11.715f, 8.533f)
                 lineTo(14.167f, 7.083f)
             }
-            path(fill = SolidColor(Color(0x00000000)), stroke = SolidColor(Color(0xFF757575)),
-                    strokeLineWidth = 1.25f, strokeLineCap = Butt, strokeLineJoin =
-                    StrokeJoin.Companion.Round, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+            path(
+                fill = SolidColor(Color(0x00000000)),
+                stroke = SolidColor(Color(0xFF757575)),
+                strokeLineWidth = 1.25f,
+                strokeLineCap = Butt, strokeLineJoin = StrokeJoin.Companion.Round,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
                 moveTo(1.68f, 11.23f)
                 curveTo(1.734f, 13.784f, 1.762f, 15.062f, 2.704f, 16.008f)
                 curveTo(3.647f, 16.954f, 4.959f, 16.987f, 7.582f, 17.053f)
@@ -52,8 +67,8 @@ public val MyIconPack.IcEmail: ImageVector
                 curveTo(1.662f, 9.592f, 1.662f, 10.408f, 1.68f, 11.23f)
                 close()
             }
-        }
-        .build()
+        }.build()
+
         return _icEmail!!
     }
 
@@ -61,8 +76,8 @@ private var _icEmail: ImageVector? = null
 
 @Preview
 @Composable
-private fun Preview(): Unit {
+private fun Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = MyIconPack.IcEmail, contentDescription = "")
+        Image(imageVector = CommonIconPack.IcEmail, contentDescription = "")
     }
 }

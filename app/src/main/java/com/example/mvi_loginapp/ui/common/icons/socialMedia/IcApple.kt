@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.common.myiconpack
+package com.example.mvi_loginapp.ui.common.icons.socialMedia
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -16,20 +16,30 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
-import kotlin.Unit
 
-public val MyIconPack.IcApple: ImageVector
+val SocialMediaIconPack.IcApple: ImageVector
     get() {
-        if (_icApple != null) {
-            return _icApple!!
-        }
-        _icApple = Builder(name = "IcApple", defaultWidth = 15.0.dp, defaultHeight = 16.0.dp,
-                viewportWidth = 15.0f, viewportHeight = 16.0f).apply {
+        if (_icApple != null) return _icApple!!
+
+        _icApple = Builder(
+            name = "IcApple",
+            defaultWidth = 15.0.dp,
+            defaultHeight = 16.0.dp,
+            viewportWidth = 15.0f,
+            viewportHeight = 16.0f,
+        ).apply {
             group {
-                path(fill = SolidColor(Color(0xFF000000)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFF000000)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(13.463f, 12.082f)
                     curveTo(13.242f, 12.593f, 12.98f, 13.063f, 12.677f, 13.495f)
                     curveTo(12.264f, 14.084f, 11.926f, 14.492f, 11.665f, 14.718f)
@@ -68,8 +78,8 @@ public val MyIconPack.IcApple: ImageVector
                     close()
                 }
             }
-        }
-        .build()
+        }.build()
+
         return _icApple!!
     }
 
@@ -77,8 +87,8 @@ private var _icApple: ImageVector? = null
 
 @Preview
 @Composable
-private fun Preview(): Unit {
+private fun Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = MyIconPack.IcApple, contentDescription = "")
+        Image(imageVector = SocialMediaIconPack.IcApple, contentDescription = "")
     }
 }

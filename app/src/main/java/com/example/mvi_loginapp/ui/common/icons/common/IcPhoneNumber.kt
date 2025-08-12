@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.common.myiconpack
+package com.example.mvi_loginapp.ui.common.icons.common
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -15,19 +15,27 @@ import androidx.compose.ui.graphics.vector.ImageVector.Builder
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
-import kotlin.Unit
 
-public val MyIconPack.IcPhoneNumber: ImageVector
+val CommonIconPack.IcPhoneNumber: ImageVector
     get() {
-        if (_icPhoneNumber != null) {
-            return _icPhoneNumber!!
-        }
-        _icPhoneNumber = Builder(name = "IcPhoneNumber", defaultWidth = 20.0.dp, defaultHeight =
-                20.0.dp, viewportWidth = 20.0f, viewportHeight = 20.0f).apply {
-            path(fill = SolidColor(Color(0x00000000)), stroke = SolidColor(Color(0xFF757575)),
-                    strokeLineWidth = 1.25f, strokeLineCap = Round, strokeLineJoin =
-                    StrokeJoin.Companion.Round, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+        if (_icPhoneNumber != null) return _icPhoneNumber!!
+
+        _icPhoneNumber = Builder(
+            name = "IcPhoneNumber",
+            defaultWidth = 20.0.dp,
+            defaultHeight = 20.0.dp,
+            viewportWidth = 20.0f,
+            viewportHeight = 20.0f,
+        ).apply {
+            path(
+                fill = SolidColor(Color(0x00000000)),
+                stroke = SolidColor(Color(0xFF757575)),
+                strokeLineWidth = 1.25f,
+                strokeLineCap = Round,
+                strokeLineJoin = StrokeJoin.Companion.Round,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
                 moveTo(11.25f, 1.667f)
                 horizontalLineTo(8.75f)
                 curveTo(6.786f, 1.667f, 5.804f, 1.667f, 5.194f, 2.277f)
@@ -43,9 +51,15 @@ public val MyIconPack.IcPhoneNumber: ImageVector
                 curveTo(14.196f, 1.667f, 13.214f, 1.667f, 11.25f, 1.667f)
                 close()
             }
-            path(fill = SolidColor(Color(0x00000000)), stroke = SolidColor(Color(0xFF757575)),
-                    strokeLineWidth = 1.25f, strokeLineCap = Round, strokeLineJoin =
-                    StrokeJoin.Companion.Round, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+            path(
+                fill = SolidColor(Color(0x00000000)),
+                stroke = SolidColor(Color(0xFF757575)),
+                strokeLineWidth = 1.25f,
+                strokeLineCap = Round,
+                strokeLineJoin = StrokeJoin.Companion.Round,
+                strokeLineMiter = 4.0f,
+                pathFillType = NonZero,
+            ) {
                 moveTo(11.667f, 1.667f)
                 horizontalLineTo(8.333f)
                 lineTo(8.75f, 2.5f)
@@ -53,8 +67,8 @@ public val MyIconPack.IcPhoneNumber: ImageVector
                 lineTo(11.667f, 1.667f)
                 close()
             }
-        }
-        .build()
+        }.build()
+
         return _icPhoneNumber!!
     }
 
@@ -62,8 +76,8 @@ private var _icPhoneNumber: ImageVector? = null
 
 @Preview
 @Composable
-private fun Preview(): Unit {
+private fun Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = MyIconPack.IcPhoneNumber, contentDescription = "")
+        Image(imageVector = CommonIconPack.IcPhoneNumber, contentDescription = "")
     }
 }

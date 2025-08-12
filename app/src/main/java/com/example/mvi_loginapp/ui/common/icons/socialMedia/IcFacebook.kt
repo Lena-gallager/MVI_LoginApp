@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.ui.common.myiconpack
+package com.example.mvi_loginapp.ui.common.icons.socialMedia
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Box
@@ -6,12 +6,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.PathFillType
 import androidx.compose.ui.graphics.PathFillType.Companion.NonZero
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.StrokeCap.Companion.Butt
-import androidx.compose.ui.graphics.StrokeJoin
 import androidx.compose.ui.graphics.StrokeJoin.Companion.Miter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.graphics.vector.ImageVector.Builder
@@ -19,20 +16,29 @@ import androidx.compose.ui.graphics.vector.group
 import androidx.compose.ui.graphics.vector.path
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.MyIconPack
-import kotlin.Unit
 
-public val MyIconPack.IcFacebook: ImageVector
+val SocialMediaIconPack.IcFacebook: ImageVector
     get() {
-        if (_icFacebook != null) {
-            return _icFacebook!!
-        }
-        _icFacebook = Builder(name = "IcFacebook", defaultWidth = 15.0.dp, defaultHeight = 16.0.dp,
-                viewportWidth = 15.0f, viewportHeight = 16.0f).apply {
+        if (_icFacebook != null) return _icFacebook!!
+        _icFacebook = Builder(
+            name = "IcFacebook",
+            defaultWidth = 15.0.dp,
+            defaultHeight = 16.0.dp,
+            viewportWidth = 15.0f,
+            viewportHeight = 16.0f,
+        ).apply {
             group {
-                path(fill = SolidColor(Color(0xFF0866FF)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFF0866FF)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(14.808f, 8.0f)
                     curveTo(14.808f, 3.964f, 11.536f, 0.692f, 7.5f, 0.692f)
                     curveTo(3.464f, 0.692f, 0.192f, 3.964f, 0.192f, 8.0f)
@@ -56,9 +62,17 @@ public val MyIconPack.IcFacebook: ImageVector
                     horizontalLineTo(14.808f)
                     close()
                 }
-                path(fill = SolidColor(Color(0xFFffffff)), stroke = null, fillAlpha = 0.9f,
-                        strokeAlpha = 0.9f, strokeLineWidth = 0.0f, strokeLineCap = Butt,
-                        strokeLineJoin = Miter, strokeLineMiter = 4.0f, pathFillType = NonZero) {
+                path(
+                    fill = SolidColor(Color(0xFFffffff)),
+                    stroke = null,
+                    fillAlpha = 0.9f,
+                    strokeAlpha = 0.9f,
+                    strokeLineWidth = 0.0f,
+                    strokeLineCap = Butt,
+                    strokeLineJoin = Miter,
+                    strokeLineMiter = 4.0f,
+                    pathFillType = NonZero,
+                ) {
                     moveTo(10.362f, 10.233f)
                     lineTo(10.772f, 8.0f)
                     horizontalLineTo(8.385f)
@@ -81,8 +95,8 @@ public val MyIconPack.IcFacebook: ImageVector
                     close()
                 }
             }
-        }
-        .build()
+        }.build()
+
         return _icFacebook!!
     }
 
@@ -90,8 +104,8 @@ private var _icFacebook: ImageVector? = null
 
 @Preview
 @Composable
-private fun Preview(): Unit {
+private fun Preview() {
     Box(modifier = Modifier.padding(12.dp)) {
-        Image(imageVector = MyIconPack.IcFacebook, contentDescription = "")
+        Image(imageVector = SocialMediaIconPack.IcFacebook, contentDescription = "")
     }
 }
