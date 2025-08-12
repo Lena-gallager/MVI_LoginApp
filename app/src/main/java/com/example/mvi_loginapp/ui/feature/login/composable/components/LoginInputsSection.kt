@@ -1,20 +1,19 @@
 package com.example.mvi_loginapp.ui.feature.login.composable.components
 
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.ui.common.MyIconPack
 import com.example.mvi_loginapp.ui.common.components.PasswordTextField
 import com.example.mvi_loginapp.ui.common.components.BaseTextField
+import com.example.mvi_loginapp.ui.common.components.ClickableText
 import com.example.mvi_loginapp.ui.common.myiconpack.IcEmail
 import com.example.mvi_loginapp.ui.common.myiconpack.IcPassword
 import com.example.mvi_loginapp.ui.feature.login.contract.LoginEvent
@@ -44,20 +43,20 @@ fun LoginInputsSection(
             leadingIconVector = MyIconPack.IcPassword,
         )
         Spacer(modifier = Modifier.height(16.dp))
-        Text(
-            text = "Forgot password?",
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable(onClick = { onEventSent(LoginEvent.OnForgotPasswordCLicked) }),
-            textAlign = TextAlign.End,
-            style = AppTheme.typography.titleSmall,
-            color = AppTheme.colors.onActionSurface,
-            fontWeight = FontWeight.Bold,
-        )
+        Box(
+            modifier = Modifier.fillMaxWidth(),
+            contentAlignment = Alignment.TopEnd,
+        ) {
+            ClickableText(
+                text = "Forgot password?",
+                style = AppTheme.typography.titleSmall,
+                onClick = { onEventSent(LoginEvent.OnForgotPasswordCLicked) },
+            )
+        }
     }
 }
 
-@Preview
+@Preview(showSystemUi = true)
 @Composable
 private fun LoginInputsSectionPreview() {
     LoginInputsSection(

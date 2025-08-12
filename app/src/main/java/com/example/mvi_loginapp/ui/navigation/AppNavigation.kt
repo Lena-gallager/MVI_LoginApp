@@ -40,7 +40,3 @@ object Navigation {
 fun NavController.navigateToRegistration() {
     navigate(route = Navigation.Routes.REGISTRATION)
 }
-
-fun NavController.navigateToLogin() {
-    navigate(route = Navigation.Routes.LOGIN)
-}

@@ -1,21 +1,19 @@
 package com.example.mvi_loginapp.ui.feature.login.composable.components
 
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.mvi_loginapp.ui.common.components.ClickableText
 import com.example.mvi_loginapp.ui.common.components.LoginSocialMediaSection
 import com.example.mvi_loginapp.ui.common.components.TextButtonComponent
 import com.example.mvi_loginapp.ui.feature.login.contract.LoginEvent
@@ -46,16 +44,16 @@ fun LoginFooter(
         LoginSocialMediaSection()
         Row {
             Text(
+                modifier = Modifier
+                    .padding(4.dp),
                 text = "Don't have an account?",
                 color = AppTheme.colors.onBackground,
+                style = AppTheme.typography.titleMedium,
             )
-            Spacer(modifier = Modifier.width(8.dp))
-            Text(
-                modifier = Modifier
-                    .clickable(onClick = { onEventSent(LoginEvent.OnRegisterClicked) }),
+            ClickableText(
                 text = "Sign-up",
-                color = AppTheme.colors.onActionSurface,
-                fontWeight = FontWeight.Bold,
+                style = AppTheme.typography.titleMedium,
+                onClick = { onEventSent(LoginEvent.OnRegisterClicked) },
             )
         }
     }

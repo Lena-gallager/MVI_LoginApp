@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.material3.Surface
 import com.example.mvi_loginapp.ui.navigation.AppNavigation
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
@@ -13,7 +14,11 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             AppTheme {
-                AppNavigation()
+                Surface(
+                    color = AppTheme.colors.background,
+                ) {
+                    AppNavigation()
+                }
             }
         }
     }

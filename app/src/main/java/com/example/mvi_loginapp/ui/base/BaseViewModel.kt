@@ -53,7 +53,7 @@ abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Navigation: V
     }
 
     protected fun setNavigation(builder: () -> Navigation) {
-        val effectValue = builder()
-        viewModelScope.launch { _navigation.send(effectValue) }
+        val navigationValue = builder()
+        viewModelScope.launch { _navigation.send(navigationValue) }
     }
 }

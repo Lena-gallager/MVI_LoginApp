@@ -7,7 +7,6 @@ import androidx.navigation.NavController
 import com.example.mvi_loginapp.ui.feature.register.RegisterViewModel
 import com.example.mvi_loginapp.ui.feature.register.composable.RegisterScreen
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterNavigation
-import com.example.mvi_loginapp.ui.navigation.navigateToLogin
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 
