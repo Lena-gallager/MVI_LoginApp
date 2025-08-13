@@ -2,4 +2,11 @@
 <resources>
 
     <style name="Theme.MVI_LoginApp" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <style name="Theme.App.Starting" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenAnimatedIcon">@drawable/rectangle_logo</item>
+        <item name="windowSplashScreenBackground">#ffffff</item>
+        <item name="postSplashScreenTheme">@style/Theme.MVI_LoginApp</item>
+        <item name="windowSplashScreenIconBackgroundColor">#ffffff</item>
+    </style>
 </resources>
