@@ -30,6 +30,6 @@ fun RegisterScreenDestination(navController: NavController) {
 
     RegisterScreen(
         state = viewModel.viewState.value,
-        onEventSent = { event -> viewModel.setEvent(event) },
+        onEventSent = viewModel::setEvent,
     )
 }

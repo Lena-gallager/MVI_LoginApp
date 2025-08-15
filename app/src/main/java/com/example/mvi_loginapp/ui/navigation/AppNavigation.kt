@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mvi_loginapp.ui.feature.login.navigation.LoginScreenDestination
+import com.example.mvi_loginapp.ui.feature.onBoarding.navigation.OnBoardingScreenDestination
 import com.example.mvi_loginapp.ui.feature.register.navigation.RegisterScreenDestination
 
 @Composable
@@ -14,8 +15,14 @@ fun AppNavigation() {
 
     NavHost(
         navController = navController,
-        startDestination = Navigation.Routes.LOGIN,
+        startDestination = Navigation.Routes.ON_BOARDING,
     ) {
+        //todo separate (what we'll be doing when there are hundreds of screens)
+        composable(
+            route = Navigation.Routes.ON_BOARDING,
+        ) {
+            OnBoardingScreenDestination(navController)
+        }
         composable(
             route = Navigation.Routes.LOGIN,
         ) {
@@ -29,14 +36,22 @@ fun AppNavigation() {
     }
 }
 
+//todo separate
 object Navigation {
 
     object Routes {
         const val LOGIN = "login"
         const val REGISTRATION = "registration"
+        const val ON_BOARDING = "on_boarding"
     }
 }
 
+//todo separate
+//todo lena there are navigation problems: login -> registration -> back btn -> back btn
 fun NavController.navigateToRegistration() {
     navigate(route = Navigation.Routes.REGISTRATION)
+}
+
+fun NavController.navigateToLogin() {
+    navigate(route = Navigation.Routes.LOGIN)
 }

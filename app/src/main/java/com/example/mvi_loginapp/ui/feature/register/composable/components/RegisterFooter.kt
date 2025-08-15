@@ -32,6 +32,8 @@ fun RegisterFooter(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextButtonComponent(
+            modifier = Modifier
+                .fillMaxWidth(),
             text = "Create Account",
             onClick = {},
         )

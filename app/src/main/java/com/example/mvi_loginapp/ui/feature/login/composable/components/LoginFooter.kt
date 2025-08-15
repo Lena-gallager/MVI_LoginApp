@@ -32,6 +32,8 @@ fun LoginFooter(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
         TextButtonComponent(
+            modifier = Modifier
+                .fillMaxWidth(),
             text = "Login",
             onClick = {},
         )

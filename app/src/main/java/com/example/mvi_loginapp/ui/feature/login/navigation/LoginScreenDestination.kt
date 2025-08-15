@@ -31,6 +31,6 @@ fun LoginScreenDestination(navController: NavController) {
 
     LoginScreen(
         state = viewModel.viewState.value,
-        onEventSent = { event -> viewModel.setEvent(event) },
+        onEventSent = viewModel::setEvent,
     )
 }
