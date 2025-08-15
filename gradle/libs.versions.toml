@@ -1,4 +1,6 @@
 [versions]
+#todo upgare everything?
+#todo add branch where we will use navigate 3?
 agp = "8.11.1"
 kotlin = "2.0.21"
 coreKtx = "1.16.0"

@@ -25,7 +25,8 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = AppTheme.colors.background,
                 ) {
-                    AppNavigation()
+                    //todo mmmmmmmmmmmmmmm
+                    AppNavigation(viewModel.startDestination.value)
                 }
             }
         }

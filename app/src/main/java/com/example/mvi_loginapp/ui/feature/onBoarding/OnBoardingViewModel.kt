@@ -7,10 +7,12 @@ import com.example.mvi_loginapp.ui.feature.onBoarding.contract.OnBoardingState
 
 class OnBoardingViewModel : BaseViewModel<OnBoardingEvent, OnBoardingState, OnBoardingNavigation>() {
 
+    //todo screen does not observe state
     override fun setInitialState(): OnBoardingState = OnBoardingState.DEFAULT
 
     override fun handleEvents(event: OnBoardingEvent) {
         when (event) {
+            //todo save to repository that OnBoarding was performed
             is OnBoardingEvent.OnFinishClicked -> setNavigation { OnBoardingNavigation.ToLogin }
             is OnBoardingEvent.OnNextClicked -> {}
             is OnBoardingEvent.OnSkipClicked -> {}

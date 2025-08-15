@@ -16,6 +16,10 @@ import com.example.mvi_loginapp.ui.feature.register.composable.components.Regist
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterEvent
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterState
 
+//todo there is no remember's and there is no need in them
+// (when u write one letter to TextField then all screen recompose one time (remember's dont save from this)
+// i dont think that we need to fix one recomposition of all screen when user inputs smth to TextField cause UI now is really smooth (at API 36 lol))
+//todo check UI at API 23
 @Composable
 fun RegisterScreen(
     modifier: Modifier = Modifier,

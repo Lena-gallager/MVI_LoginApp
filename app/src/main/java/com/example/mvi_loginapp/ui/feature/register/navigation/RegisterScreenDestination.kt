@@ -21,6 +21,8 @@ fun RegisterScreenDestination(navController: NavController) {
                     navController.popBackStack()
                 }
 
+                //todo i have no fucking idea how just not to add screen to backStack (its about this LoginScreen and OnBoarding)
+                // that was sooooooooo simple in jectpack navigation where we have VISIBLE GRAPH (i miss it)
                 is RegisterNavigation.ToLoginScreen -> {
                     navController.popBackStack()
                 }

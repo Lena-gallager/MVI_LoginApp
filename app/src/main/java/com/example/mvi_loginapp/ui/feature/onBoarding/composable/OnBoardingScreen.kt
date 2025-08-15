@@ -17,6 +17,7 @@ import com.example.mvi_loginapp.ui.feature.onBoarding.contract.OnBoardingEvent
 import com.example.mvi_loginapp.ui.feature.onBoarding.contract.OnBoardingState
 import com.example.mvi_loginapp.ui.feature.onBoarding.data.OnBoardingStates
 
+//todo check recompositions
 @Composable
 fun OnBoardingScreen(
     modifier: Modifier = Modifier,

@@ -10,12 +10,14 @@ import com.example.mvi_loginapp.ui.feature.onBoarding.navigation.OnBoardingScree
 import com.example.mvi_loginapp.ui.feature.register.navigation.RegisterScreenDestination
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(
+    startDestination: String,
+) {
     val navController = rememberNavController()
 
     NavHost(
         navController = navController,
-        startDestination = Navigation.Routes.ON_BOARDING,
+        startDestination = startDestination,
     ) {
         //todo separate (what we'll be doing when there are hundreds of screens)
         composable(
