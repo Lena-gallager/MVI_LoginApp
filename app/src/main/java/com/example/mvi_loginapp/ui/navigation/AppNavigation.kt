@@ -51,9 +51,13 @@ object Navigation {
 //todo separate
 //todo lena there are navigation problems: login -> registration -> back btn -> back btn
 fun NavController.navigateToRegistration() {
-    navigate(route = Navigation.Routes.REGISTRATION)
+    navigate(route = Navigation.Routes.REGISTRATION) {
+        launchSingleTop = true
+    }
 }
 
 fun NavController.navigateToLogin() {
-    navigate(route = Navigation.Routes.LOGIN)
+    navigate(route = Navigation.Routes.LOGIN) {
+        launchSingleTop = true
+    }
 }

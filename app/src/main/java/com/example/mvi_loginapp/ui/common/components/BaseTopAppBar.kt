@@ -1,43 +1,47 @@
 package com.example.mvi_loginapp.ui.common.components
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowLeft
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.mvi_loginapp.ui.common.defaults.BaseTopAppBarColors
 import com.example.mvi_loginapp.ui.common.defaults.IconButtonColors
 import com.example.mvi_loginapp.ui.theme.AppTheme
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopAppBar(
+fun BaseTopAppBar(
     modifier: Modifier = Modifier,
-    onBackClicked: () -> Unit,
+    isBackButtonVisible: Boolean = true,
+    onBackClicked: () -> Unit = {},
+    title: String? = null,
 ) {
-    Row(
+    TopAppBar(
         modifier = modifier
-            .statusBarsPadding()
-            .padding(vertical = 16.dp)
-            .fillMaxWidth(),
-        verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = Arrangement.Start,
-    ) {
-        BackButton(
-            onClick = onBackClicked,
-        )
-    }
+            .background(Color.White),
+        title = {},
+        navigationIcon = {
+            if (isBackButtonVisible) {
+                BackButton(
+                    onClick = onBackClicked,
+                )
+            } else null
+        },
+        colors = BaseTopAppBarColors.get(),
+    )
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun BackButton(
     modifier: Modifier = Modifier,
@@ -61,7 +65,7 @@ private fun BackButton(
 @Preview
 @Composable
 private fun TopAppBarPreview() {
-    TopAppBar(
+    BaseTopAppBar(
         onBackClicked = {},
     )
 }

@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.components.TopAppBar
+import com.example.mvi_loginapp.ui.common.components.BaseTopAppBar
 import com.example.mvi_loginapp.ui.feature.login.composable.components.LoginFooter
 import com.example.mvi_loginapp.ui.feature.login.composable.components.LoginHeader
 import com.example.mvi_loginapp.ui.feature.login.composable.components.LoginInputsSection
@@ -27,8 +27,8 @@ fun LoginScreen(
             .fillMaxSize()
             .padding(horizontal = 24.dp)
     ) {
-        TopAppBar(
-            onBackClicked = {},
+        BaseTopAppBar(
+            isBackButtonVisible = false,
         )
         LoginHeader()
         Spacer(modifier = Modifier.height(40.dp))

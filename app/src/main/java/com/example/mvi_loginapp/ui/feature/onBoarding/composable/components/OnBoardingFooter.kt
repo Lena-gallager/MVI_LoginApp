@@ -47,6 +47,7 @@ fun BoxScope.OnBoardingFooter(
                 //todo use OnBoardingEvent.OnSkipClicked will be better or worth?
                 // if we will use vm to control page scrolls than there is no need to pass list of all possible onBoardingState's (witch sound cool)
                 // but see HorizontalPager and u will understand why we cant do this through vm (or its im stupid)
+                //TODO READ ABOUT VIEWPAGER IN COMPOSE WITH MVI (im not sure u'll find smth usefull but at least ask deepSeek about this idk)
                 onClick = { coroutineScope.launch { pagerState.animateScrollToPage(pagerState.pageCount-1) } },
                 buttonColors = DefaultButtonColors.getNonActionColors(),
             )

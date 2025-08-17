@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import com.example.mvi_loginapp.ui.feature.register.RegisterViewModel
 import com.example.mvi_loginapp.ui.feature.register.composable.RegisterScreen
 import com.example.mvi_loginapp.ui.feature.register.contract.RegisterNavigation
+import com.example.mvi_loginapp.ui.navigation.Navigation
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 
@@ -24,7 +25,10 @@ fun RegisterScreenDestination(navController: NavController) {
                 //todo i have no fucking idea how just not to add screen to backStack (its about this LoginScreen and OnBoarding)
                 // that was sooooooooo simple in jectpack navigation where we have VISIBLE GRAPH (i miss it)
                 is RegisterNavigation.ToLoginScreen -> {
-                    navController.popBackStack()
+                    navController.navigate(route = Navigation.Routes.LOGIN) {
+                        launchSingleTop = true
+                        popUpTo(Navigation.Routes.LOGIN)
+                    }
                 }
             }
         }.collect()

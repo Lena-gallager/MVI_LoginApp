@@ -8,7 +8,7 @@ import com.example.mvi_loginapp.ui.feature.onBoarding.OnBoardingViewModel
 import com.example.mvi_loginapp.ui.feature.onBoarding.composable.OnBoardingScreen
 import com.example.mvi_loginapp.ui.feature.onBoarding.contract.OnBoardingNavigation
 import com.example.mvi_loginapp.ui.feature.onBoarding.data.OnBoardingStates
-import com.example.mvi_loginapp.ui.navigation.navigateToLogin
+import com.example.mvi_loginapp.ui.navigation.Navigation
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 
@@ -20,7 +20,9 @@ fun OnBoardingScreenDestination(navController: NavController) {
     LaunchedEffect(Unit) {
         viewModel.navigation.onEach { navigation ->
             when (navigation) {
-                is OnBoardingNavigation.ToLogin -> navController.navigateToLogin()
+                is OnBoardingNavigation.ToLogin -> navController.navigate(route = Navigation.Routes.LOGIN) {
+                    popUpTo(Navigation.Routes.ON_BOARDING) { inclusive = true }
+                }
             }
         }.collect()
     }

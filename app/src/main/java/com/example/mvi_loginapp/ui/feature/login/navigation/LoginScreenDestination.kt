@@ -21,10 +21,6 @@ fun LoginScreenDestination(navController: NavController) {
                 is LoginNavigation.ToRegistrationScreen -> {
                     navController.navigateToRegistration()
                 }
-
-                is LoginNavigation.Back -> {
-                    navController.popBackStack()
-                }
             }
         }.collect()
     }

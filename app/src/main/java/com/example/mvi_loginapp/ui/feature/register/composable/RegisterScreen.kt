@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.mvi_loginapp.ui.common.components.TopAppBar
+import com.example.mvi_loginapp.ui.common.components.BaseTopAppBar
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterFooter
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterHeader
 import com.example.mvi_loginapp.ui.feature.register.composable.components.RegisterInputsSection
@@ -31,7 +31,7 @@ fun RegisterScreen(
             .fillMaxSize()
             .padding(horizontal = 24.dp)
     ) {
-        TopAppBar(
+        BaseTopAppBar(
             onBackClicked = { onEventSent(RegisterEvent.OnBackPressed) },
         )
         RegisterHeader()
