@@ -2,7 +2,6 @@ package com.example.mvi_loginapp.ui.feature.register.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
-import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import com.example.mvi_loginapp.ui.feature.register.RegisterViewModel
 import com.example.mvi_loginapp.ui.feature.register.composable.RegisterScreen
@@ -10,26 +9,17 @@ import com.example.mvi_loginapp.ui.feature.register.contract.RegisterNavigation
 import com.example.mvi_loginapp.ui.navigation.Navigation
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
+import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun RegisterScreenDestination(navController: NavController) {
-    val viewModel: RegisterViewModel = viewModel<RegisterViewModel>()
+    val viewModel: RegisterViewModel = koinViewModel()
 
     LaunchedEffect(Unit) {
         viewModel.navigation.onEach { navigation ->
             when (navigation) {
-                is RegisterNavigation.Back -> {
-                    navController.popBackStack()
-                }
-
-                //todo i have no fucking idea how just not to add screen to backStack (its about this LoginScreen and OnBoarding)
-                // that was sooooooooo simple in jectpack navigation where we have VISIBLE GRAPH (i miss it)
-                is RegisterNavigation.ToLoginScreen -> {
-                    navController.navigate(route = Navigation.Routes.LOGIN) {
-                        launchSingleTop = true
-                        popUpTo(Navigation.Routes.LOGIN)
-                    }
-                }
+                is RegisterNavigation.Back -> navController.popBackStack()
+                is RegisterNavigation.ToLoginScreen -> navController.navigateToLogin()
             }
         }.collect()
     }
@@ -38,4 +28,11 @@ fun RegisterScreenDestination(navController: NavController) {
         state = viewModel.viewState.value,
         onEventSent = viewModel::setEvent,
     )
+}
+
+private fun NavController.navigateToLogin() {
+    this.navigate(route = Navigation.Routes.LOGIN) {
+        launchSingleTop = true
+        popUpTo(Navigation.Routes.LOGIN)
+    }
 }

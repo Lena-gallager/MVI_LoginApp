@@ -1,7 +1,6 @@
 package com.example.mvi_loginapp.ui.navigation
 
 import androidx.compose.runtime.Composable
-import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -45,19 +44,5 @@ object Navigation {
         const val LOGIN = "login"
         const val REGISTRATION = "registration"
         const val ON_BOARDING = "on_boarding"
-    }
-}
-
-//todo separate
-//todo lena there are navigation problems: login -> registration -> back btn -> back btn
-fun NavController.navigateToRegistration() {
-    navigate(route = Navigation.Routes.REGISTRATION) {
-        launchSingleTop = true
-    }
-}
-
-fun NavController.navigateToLogin() {
-    navigate(route = Navigation.Routes.LOGIN) {
-        launchSingleTop = true
     }
 }
