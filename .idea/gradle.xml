@@ -15,6 +15,11 @@
             <option value="$PROJECT_DIR$/core/navigation" />
             <option value="$PROJECT_DIR$/core/uicomponents" />
             <option value="$PROJECT_DIR$/core/utils" />
+            <option value="$PROJECT_DIR$/feature" />
+            <option value="$PROJECT_DIR$/feature/loginscreen" />
+            <option value="$PROJECT_DIR$/feature/onboardingscreen" />
+            <option value="$PROJECT_DIR$/feature/registerscreen" />
+            <option value="$PROJECT_DIR$/feature/splashscreen" />
           </set>
         </option>
       </GradleProjectSettings>
