@@ -22,3 +22,7 @@ dependencyResolutionManagement {
 rootProject.name = "MVI_LoginApp"
 include(":app")
  
+include("core")
+include(":core:uicomponents")
+include(":core:navigation")
+include(":core:utils")
