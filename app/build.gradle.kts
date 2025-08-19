@@ -9,7 +9,7 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.example.mvi_loginapp"
+        applicationId = "com.example.mvi_loginapp.app"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
