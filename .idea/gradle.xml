@@ -17,9 +17,14 @@
             <option value="$PROJECT_DIR$/core/utils" />
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/loginscreen" />
+            <option value="$PROJECT_DIR$/feature/loginscreen/api" />
+            <option value="$PROJECT_DIR$/feature/loginscreen/impl" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen" />
             <option value="$PROJECT_DIR$/feature/registerscreen" />
             <option value="$PROJECT_DIR$/feature/splashscreen" />
+            <option value="$PROJECT_DIR$/onboardingscreen" />
+            <option value="$PROJECT_DIR$/onboardingscreen/api" />
+            <option value="$PROJECT_DIR$/onboardingscreen/impl" />
           </set>
         </option>
       </GradleProjectSettings>
