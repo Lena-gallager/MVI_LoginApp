@@ -1,6 +1,6 @@
 package com.example.mvi_loginapp.feature.loginscreen.impl.viewModel
 
-import com.example.mvi_loginapp.core.uicomponents.viewModel.BaseViewModel
+import com.example.mvi_loginapp.core.viewModel.BaseViewModel
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginEvent
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginNavigation
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginState

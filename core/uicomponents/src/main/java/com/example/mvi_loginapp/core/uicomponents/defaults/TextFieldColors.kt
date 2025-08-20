@@ -4,7 +4,7 @@ import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.example.mvi_loginapp.ui.theme.AppTheme
+import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 
 object TextFieldColors {
 

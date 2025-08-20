@@ -3,7 +3,7 @@ package com.example.mvi_loginapp.core.uicomponents.defaults
 import androidx.compose.material3.ButtonColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
-import com.example.mvi_loginapp.ui.theme.AppTheme
+import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 
 object DefaultButtonColors {
 

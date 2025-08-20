@@ -1,6 +1,6 @@
 package com.example.mvi_loginapp.feature.loginscreen.impl.contract
 
-import com.example.mvi_loginapp.core.uicomponents.viewModel.ViewEvent
+import com.example.mvi_loginapp.core.viewModel.ViewEvent
 
 sealed class LoginEvent : ViewEvent {
 

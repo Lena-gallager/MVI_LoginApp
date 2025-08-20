@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.feature.loginscreen.impl.destination
+package com.example.mvi_loginapp.feature.loginscreen.api.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect

@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.core.uicomponents.viewModel
+package com.example.mvi_loginapp.core.viewModel
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
@@ -10,13 +10,7 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 
-interface ViewEvent
-
-interface ViewState
-
-interface ViewNavigation
-
-abstract class BaseViewModel<Event: ViewEvent, UiState: ViewState, Navigation: ViewNavigation> : ViewModel() {
+abstract class BaseViewModel<Event : ViewEvent, UiState : ViewState, Navigation : ViewNavigation> : ViewModel() {
 
     abstract fun setInitialState(): UiState
     abstract fun handleEvents(event: Event)
