@@ -20,7 +20,7 @@ import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginEvent
 
 @Composable
-fun LoginFooter(
+internal fun LoginFooter(
     modifier: Modifier = Modifier,
     onEventSent: (event: LoginEvent) -> Unit,
 ) {

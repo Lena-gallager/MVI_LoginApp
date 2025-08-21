@@ -6,12 +6,13 @@ import androidx.navigation.NavController
 import com.example.mvi_loginapp.feature.loginscreen.impl.composable.LoginScreen
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginNavigation
 import com.example.mvi_loginapp.feature.loginscreen.impl.viewModel.LoginViewModel
+import com.example.mvi_loginapp.feature.registerscreen.api.navigation.RegisterNavigationRoute
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import org.koin.compose.viewmodel.koinViewModel
 
 @Composable
-fun LoginScreenDestination(navController: NavController) {
+internal fun LoginScreenDestination(navController: NavController) {
     val viewModel: LoginViewModel = koinViewModel()
 
     LaunchedEffect(Unit) {
@@ -29,5 +30,5 @@ fun LoginScreenDestination(navController: NavController) {
 }
 
 private fun NavController.navigateToRegistration() {
-   // navigate(route = Navigation.Routes.REGISTRATION)
+    navigate(route = RegisterNavigationRoute.ROUTE)
 }

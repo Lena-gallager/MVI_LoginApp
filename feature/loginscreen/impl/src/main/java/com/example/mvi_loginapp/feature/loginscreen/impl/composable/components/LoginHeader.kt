@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 
 @Composable
-fun LoginHeader(
+internal fun LoginHeader(
     modifier: Modifier = Modifier,
 ) {
     Box(

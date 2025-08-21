@@ -21,7 +21,7 @@ import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginEvent
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginState
 
 @Composable
-fun LoginInputsSection(
+internal fun LoginInputsSection(
     modifier: Modifier = Modifier,
     state: LoginState,
     onEventSent: (event: LoginEvent) -> Unit,

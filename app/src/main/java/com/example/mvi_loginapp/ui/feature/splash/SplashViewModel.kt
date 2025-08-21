@@ -6,7 +6,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mvi_loginapp.data.UserInteractionRepository
-import com.example.mvi_loginapp.ui.navigation.Navigation
+import com.example.mvi_loginapp.feature.loginscreen.api.navigation.LoginNavigationRoute
+import com.example.mvi_loginapp.feature.onboardingscreen.api.navigation.OnBoardingNavigationRoute
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -20,15 +21,15 @@ class SplashViewModel(
     val isLoading = _isLoading.asStateFlow()
 
     //todo read about stateFlow and etc
-    private val _startDestination: MutableState<String> = mutableStateOf(Navigation.Routes.ON_BOARDING)
+    private val _startDestination: MutableState<String> = mutableStateOf(OnBoardingNavigationRoute.ROUTE)
     val startDestination: State<String> = _startDestination
 
     init {
         viewModelScope.launch {
             if (userInteractionRepository.isOnBoardingWasPerformed) {
-                _startDestination.value = Navigation.Routes.LOGIN
+                _startDestination.value = LoginNavigationRoute.ROUTE
             } else {
-                _startDestination.value = Navigation.Routes.ON_BOARDING
+                _startDestination.value = OnBoardingNavigationRoute.ROUTE
             }
             delay(1000)
             _isLoading.value = false
