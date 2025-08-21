@@ -36,6 +36,8 @@ android {
 dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":feature:registerscreen:impl"))
+    //TODO ,KZZZZZZZZZZZZZNM CircularReferenceException BECAUSE THIS MODULE DEPENDS ON :feature:loginscreen:api
+    // AND :feature:loginscreen:api DEPENDS ON THIS MODULE
     implementation(project(":feature:loginscreen:api"))
 
     implementation(libs.androidx.core.ktx)

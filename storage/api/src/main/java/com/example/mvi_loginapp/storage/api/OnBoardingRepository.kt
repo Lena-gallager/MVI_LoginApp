@@ -1,9 +1,9 @@
-package com.example.mvi_loginapp.data
+package com.example.mvi_loginapp.storage.api
 
 import android.content.SharedPreferences
 import androidx.core.content.edit
 
-class UserInteractionRepository(
+class OnBoardingRepository(
     private val sharedPreferences: SharedPreferences,
 ) {
 

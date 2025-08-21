@@ -1,11 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
 }
 
 android {
-    namespace = "com.example.mvi_loginapp.feature.onboardingscreen.impl"
+    namespace = "com.example.mvi_loginapp.storage.impl"
     compileSdk = 36
 
     defaultConfig {
@@ -34,11 +33,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:uicomponents"))
-    api(project(":core:viewModel"))
-    api(project(":storage:api"))
+    implementation(project(":storage:api"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
-    implementation(libs.material)
 }
