@@ -12,6 +12,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
+//todo должен находится в модуле :feature:splashscreen:**
+// мб лучше использовать отдельный composable screen for splash? cause now i use androidx.core.splashscreen
 class SplashViewModel(
     onBoardingRepository: OnBoardingRepository,
 ) : ViewModel() {
