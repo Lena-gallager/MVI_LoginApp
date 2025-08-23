@@ -3,10 +3,10 @@ package com.example.mvi_loginapp.feature.loginscreen.api.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
+import com.example.mvi_loginapp.core.navigation.NavigationRoutes
 import com.example.mvi_loginapp.feature.loginscreen.impl.composable.LoginScreen
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginNavigation
 import com.example.mvi_loginapp.feature.loginscreen.impl.viewModel.LoginViewModel
-import com.example.mvi_loginapp.feature.registerscreen.api.navigation.RegisterNavigationRoute
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
 import org.koin.compose.viewmodel.koinViewModel
@@ -30,5 +30,5 @@ internal fun LoginScreenDestination(navController: NavController) {
 }
 
 private fun NavController.navigateToRegistration() {
-    navigate(route = RegisterNavigationRoute.ROUTE)
+    navigate(route = NavigationRoutes.REGISTER)
 }

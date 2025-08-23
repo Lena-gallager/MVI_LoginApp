@@ -1,4 +1,4 @@
-package com.example.mvi_loginapp.storage.api
+package com.example.mvi_loginapp.feature.onboardingscreen.data
 
 import android.content.SharedPreferences
 import androidx.core.content.edit

@@ -3,7 +3,7 @@ package com.example.mvi_loginapp.feature.onboardingscreen.api.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
-import com.example.mvi_loginapp.feature.loginscreen.api.navigation.LoginNavigationRoute
+import com.example.mvi_loginapp.core.navigation.NavigationRoutes
 import com.example.mvi_loginapp.feature.onboardingscreen.impl.composable.OnBoardingScreen
 import com.example.mvi_loginapp.feature.onboardingscreen.impl.contract.OnBoardingNavigation
 import com.example.mvi_loginapp.feature.onboardingscreen.impl.data.OnBoardingStates
@@ -32,7 +32,7 @@ internal fun OnBoardingScreenDestination(navController: NavController) {
 }
 
 private fun NavController.navigateToLogin() {
-    navigate(route = LoginNavigationRoute.ROUTE) {
-        popUpTo(OnBoardingNavigationRoute.ROUTE) { inclusive = true }
+    navigate(route = NavigationRoutes.LOGIN) {
+        popUpTo(NavigationRoutes.ON_BOARDING) { inclusive = true }
     }
 }

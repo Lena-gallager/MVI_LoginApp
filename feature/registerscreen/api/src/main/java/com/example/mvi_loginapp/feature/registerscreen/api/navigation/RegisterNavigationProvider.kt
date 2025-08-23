@@ -4,6 +4,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.example.mvi_loginapp.core.navigation.NavigationProvider
+import com.example.mvi_loginapp.core.navigation.NavigationRoutes
 
 class RegisterNavigationProvider : NavigationProvider {
 
@@ -12,7 +13,7 @@ class RegisterNavigationProvider : NavigationProvider {
         navGraphBuilder: NavGraphBuilder,
     ) {
         navGraphBuilder.composable(
-            route = RegisterNavigationRoute.ROUTE,
+            route = NavigationRoutes.REGISTER,
         ) {
             RegisterScreenDestination(navController)
         }

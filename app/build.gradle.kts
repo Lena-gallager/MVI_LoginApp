@@ -41,17 +41,15 @@ android {
 
 dependencies {
     implementation(project(":core:navigation"))
+    implementation(project(":core:uicomponents"))
     implementation(project(":feature:onboardingscreen:api"))
-    //implementation(project(":feature:onboardingscreen:impl"))
+    implementation(project(":feature:onboardingscreen:data"))
 
     implementation(project(":feature:loginscreen:api"))
-    //implementation(project(":feature:loginscreen:impl"))
 
     implementation(project(":feature:registerscreen:api"))
-    //implementation(project(":feature:registerscreen:impl"))
 
     implementation(project(":feature:splashscreen:api"))
-    //implementation(project(":feature:splashscreen:impl"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)

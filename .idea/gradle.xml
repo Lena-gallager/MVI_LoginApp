@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/feature/loginscreen/impl" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen/api" />
+            <option value="$PROJECT_DIR$/feature/onboardingscreen/data" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen/impl" />
             <option value="$PROJECT_DIR$/feature/registerscreen" />
             <option value="$PROJECT_DIR$/feature/registerscreen/api" />

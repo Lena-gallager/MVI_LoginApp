@@ -36,7 +36,7 @@ android {
 dependencies {
     implementation(project(":core:navigation"))
     implementation(project(":feature:loginscreen:impl"))
-    implementation(project(":feature:registerscreen:api"))
+    //implementation(project(":feature:registerscreen:api"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

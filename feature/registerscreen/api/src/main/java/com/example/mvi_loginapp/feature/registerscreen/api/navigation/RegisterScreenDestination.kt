@@ -3,7 +3,7 @@ package com.example.mvi_loginapp.feature.registerscreen.api.navigation
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavController
-import com.example.mvi_loginapp.feature.loginscreen.api.navigation.LoginNavigationRoute
+import com.example.mvi_loginapp.core.navigation.NavigationRoutes
 import com.example.mvi_loginapp.feature.registerscreen.impl.composable.RegisterScreen
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterNavigation
 import com.example.mvi_loginapp.feature.registerscreen.impl.viewModel.RegisterViewModel
@@ -31,8 +31,8 @@ fun RegisterScreenDestination(navController: NavController) {
 }
 
 private fun NavController.navigateToLogin() {
-    this.navigate(route = LoginNavigationRoute.ROUTE) {
+    this.navigate(route = NavigationRoutes.LOGIN) {
         launchSingleTop = true
-        popUpTo(LoginNavigationRoute.ROUTE)
+        popUpTo(NavigationRoutes.LOGIN)
     }
 }
