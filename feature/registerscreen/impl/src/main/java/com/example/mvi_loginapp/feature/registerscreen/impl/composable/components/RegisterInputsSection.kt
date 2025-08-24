@@ -15,12 +15,14 @@ import com.example.mvi_loginapp.core.uicomponents.icons.common.IcEmail
 import com.example.mvi_loginapp.core.uicomponents.icons.common.IcPassword
 import com.example.mvi_loginapp.core.uicomponents.icons.common.IcPhoneNumber
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterEvent
-import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterState
 
 @Composable
 fun RegisterInputsSection(
     modifier: Modifier = Modifier,
-    state: RegisterState,
+    email: String,
+    phone: String,
+    password: String,
+    confirmPassword: String,
     onEventSent: (event: RegisterEvent) -> Unit,
 ) {
     Column(
@@ -28,28 +30,28 @@ fun RegisterInputsSection(
     ) {
         Spacer(modifier = Modifier.height(16.dp))
         BaseTextField(
-            value = state.email,
+            value = email,
             onValueChange = { onEventSent(RegisterEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
             leadingIconVector = CommonIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         BaseTextField(
-            value = state.phone,
+            value = phone,
             onValueChange = { onEventSent(RegisterEvent.OnPhoneChanged(it)) },
             labelText = "Enter your number",
             leadingIconVector = CommonIconPack.IcPhoneNumber,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
-            value = state.password,
+            value =password,
             onValueChange = { onEventSent(RegisterEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
             leadingIconVector = CommonIconPack.IcPassword,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
-            value = state.confirmPassword,
+            value = confirmPassword,
             onValueChange = { onEventSent(RegisterEvent.OnConfirmPasswordChanged(it)) },
             labelText = "Confirm your password",
             leadingIconVector = CommonIconPack.IcPassword,
@@ -61,7 +63,10 @@ fun RegisterInputsSection(
 @Composable
 private fun RegisterInputsSectionPreview() {
     RegisterInputsSection(
-        state = RegisterState.DEFAULT,
+        email = "",
+        phone = "",
+        password = "",
+        confirmPassword = "",
         onEventSent = {},
     )
 }

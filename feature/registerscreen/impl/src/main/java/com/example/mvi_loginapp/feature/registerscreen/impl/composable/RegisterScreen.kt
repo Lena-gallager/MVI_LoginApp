@@ -18,10 +18,6 @@ import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterEve
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterState
 import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterDialogType
 
-//todo there is no remember's and there is no need in them
-// (when u write one letter to TextField then all screen recompose one time (remember's dont save from this)
-// i dont think that we need to fix one recomposition of all screen when user inputs smth to TextField cause UI now is really smooth (at API 36 lol))
-//todo check UI at API 23
 @Composable
 fun RegisterScreen(
     modifier: Modifier = Modifier,
@@ -42,7 +38,11 @@ fun RegisterScreen(
         Spacer(modifier = Modifier.height(40.dp))
         RegisterInputsSection(
             modifier = Modifier.weight(1f),
-            state = state,
+            //todo maybe better to create RegisterInputData that will contain email, phone, etc. but idk im not sure
+            email = state.email,
+            phone = state.phone,
+            password = state.password,
+            confirmPassword = state.confirmPassword,
             onEventSent = onEventSent,
         )
         RegisterFooter(
