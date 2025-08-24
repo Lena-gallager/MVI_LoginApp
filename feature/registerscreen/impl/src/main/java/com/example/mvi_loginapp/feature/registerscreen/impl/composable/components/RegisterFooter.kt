@@ -43,7 +43,9 @@ fun RegisterFooter(
             textAlign = TextAlign.Center,
             color = AppTheme.colors.onBackground,
         )
-        SocialMediaSection()
+        SocialMediaSection(
+            onClick = { onEventSent(RegisterEvent.OnSocialMediaClicked(it)) },
+        )
         Row {
             Text(
                 modifier = Modifier

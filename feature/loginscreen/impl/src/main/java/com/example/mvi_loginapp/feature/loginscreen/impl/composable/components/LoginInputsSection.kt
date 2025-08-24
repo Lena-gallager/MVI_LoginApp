@@ -18,26 +18,26 @@ import com.example.mvi_loginapp.core.uicomponents.icons.common.IcEmail
 import com.example.mvi_loginapp.core.uicomponents.icons.common.IcPassword
 import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginEvent
-import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginState
 
 @Composable
 internal fun LoginInputsSection(
     modifier: Modifier = Modifier,
-    state: LoginState,
+    email: String,
+    password: String,
     onEventSent: (event: LoginEvent) -> Unit,
 ) {
     Column(
         modifier = modifier.fillMaxWidth(),
     ) {
         BaseTextField(
-            value = state.email,
+            value = email,
             onValueChange = { onEventSent(LoginEvent.OnEmailChanged(it)) },
             labelText = "Enter your email",
             leadingIconVector = CommonIconPack.IcEmail,
         )
         Spacer(modifier = Modifier.height(16.dp))
         PasswordTextField(
-            value = state.password,
+            value = password,
             onValueChange = { onEventSent(LoginEvent.OnPasswordChanged(it)) },
             labelText = "Enter your password",
             leadingIconVector = CommonIconPack.IcPassword,
@@ -60,7 +60,8 @@ internal fun LoginInputsSection(
 @Composable
 private fun LoginInputsSectionPreview() {
     LoginInputsSection(
-        state = LoginState.DEFAULT,
+        email = "",
+        password = "",
         onEventSent = {},
     )
 }

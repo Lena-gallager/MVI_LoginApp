@@ -10,11 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.core.uicomponents.components.appBar.BaseTopAppBar
+import com.example.mvi_loginapp.core.uicomponents.components.dialog.DialogOneButton
 import com.example.mvi_loginapp.feature.registerscreen.impl.composable.components.RegisterFooter
 import com.example.mvi_loginapp.feature.registerscreen.impl.composable.components.RegisterHeader
 import com.example.mvi_loginapp.feature.registerscreen.impl.composable.components.RegisterInputsSection
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterEvent
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterState
+import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterDialogType
 
 //todo there is no remember's and there is no need in them
 // (when u write one letter to TextField then all screen recompose one time (remember's dont save from this)
@@ -26,6 +28,8 @@ fun RegisterScreen(
     state: RegisterState,
     onEventSent: (event: RegisterEvent) -> Unit,
 ) {
+    val socialMediaDialog: RegisterDialogType.SocialMedia? = state.dialogType as? RegisterDialogType.SocialMedia
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -46,6 +50,16 @@ fun RegisterScreen(
                 .weight(1f)
                 .padding(bottom = 16.dp),
             onEventSent = onEventSent,
+        )
+    }
+
+    if (socialMediaDialog != null) {
+        DialogOneButton(
+            title = "Хочешь сказать, что у тебя есть ${socialMediaDialog.type} аккаунт?",
+            description = "Ты давай пендоские сервисы переставай использовать. Лучше зарегистрируйся в MAX!",
+            buttonText = "Извините, пошел регистрироваться в Максе",
+            onConfirmClick = { onEventSent(RegisterEvent.OnDismissDialog) },
+            onDismiss = { onEventSent(RegisterEvent.OnDismissDialog) },
         )
     }
 }

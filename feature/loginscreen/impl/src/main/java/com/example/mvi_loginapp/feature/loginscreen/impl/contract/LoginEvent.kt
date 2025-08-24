@@ -1,5 +1,6 @@
 package com.example.mvi_loginapp.feature.loginscreen.impl.contract
 
+import com.example.mvi_loginapp.core.uicomponents.data.SocialMediaType
 import com.example.mvi_loginapp.core.viewModel.ViewEvent
 
 sealed class LoginEvent : ViewEvent {
@@ -14,9 +15,7 @@ sealed class LoginEvent : ViewEvent {
 
     object OnRegisterClicked : LoginEvent()
 
-    object onFacebookClicked : LoginEvent()
+    data class OnSocialMediaClicked(val type: SocialMediaType) : LoginEvent()
 
-    object onGoogleClicked : LoginEvent()
-
-    object onAppleClicked : LoginEvent()
+    object OnDismissDialog : LoginEvent()
 }

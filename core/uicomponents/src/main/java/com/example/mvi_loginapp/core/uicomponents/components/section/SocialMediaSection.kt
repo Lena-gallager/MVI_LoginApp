@@ -22,15 +22,18 @@ import com.example.mvi_loginapp.core.uicomponents.data.SocialMediaType
 import com.example.mvi_loginapp.core.uicomponents.theme.AppTheme
 
 @Composable
-fun SocialMediaSection(modifier: Modifier = Modifier) {
+fun SocialMediaSection(
+    modifier: Modifier = Modifier,
+    onClick: (type: SocialMediaType) -> Unit,
+) {
     Row(
         modifier = modifier
             .padding(vertical = 16.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        SocialMediaItem(type = SocialMediaType.FACEBOOK)
-        SocialMediaItem(type = SocialMediaType.GOOGLE)
-        SocialMediaItem(type = SocialMediaType.APPLE)
+        SocialMediaItem(type = SocialMediaType.FACEBOOK, onClick = onClick)
+        SocialMediaItem(type = SocialMediaType.GOOGLE, onClick = onClick)
+        SocialMediaItem(type = SocialMediaType.APPLE, onClick = onClick)
     }
 }
 
@@ -38,6 +41,7 @@ fun SocialMediaSection(modifier: Modifier = Modifier) {
 private fun SocialMediaItem(
     modifier: Modifier = Modifier,
     type: SocialMediaType,
+    onClick: (type: SocialMediaType) -> Unit,
 ) {
     Surface(
         modifier = modifier
@@ -50,7 +54,7 @@ private fun SocialMediaItem(
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .clickable(onClick = {}),
+                .clickable(onClick = { onClick(type) }),
             contentAlignment = Alignment.Center,
         ) {
             Icon(
@@ -65,5 +69,7 @@ private fun SocialMediaItem(
 @Preview
 @Composable
 private fun LoginSocialMediaSectionPreview() {
-    SocialMediaSection()
+    SocialMediaSection(
+        onClick = {},
+    )
 }

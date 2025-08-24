@@ -1,5 +1,6 @@
 package com.example.mvi_loginapp.feature.registerscreen.impl.contract
 
+import com.example.mvi_loginapp.core.uicomponents.data.SocialMediaType
 import com.example.mvi_loginapp.core.viewModel.ViewEvent
 
 sealed class RegisterEvent : ViewEvent {
@@ -17,4 +18,8 @@ sealed class RegisterEvent : ViewEvent {
     object LoginClicked : RegisterEvent()
 
     object OnBackPressed : RegisterEvent()
+
+    data class OnSocialMediaClicked(val type: SocialMediaType) : RegisterEvent()
+
+    object OnDismissDialog : RegisterEvent()
 }

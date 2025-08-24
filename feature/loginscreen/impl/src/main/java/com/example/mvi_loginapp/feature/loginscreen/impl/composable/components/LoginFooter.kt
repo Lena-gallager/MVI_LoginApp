@@ -43,7 +43,9 @@ internal fun LoginFooter(
             textAlign = TextAlign.Center,
             color = AppTheme.colors.onBackground,
         )
-        SocialMediaSection()
+        SocialMediaSection(
+            onClick = { onEventSent(LoginEvent.OnSocialMediaClicked(it)) },
+        )
         Row {
             Text(
                 modifier = Modifier
@@ -65,6 +67,6 @@ internal fun LoginFooter(
 @Composable
 private fun LoginFooterPreview() {
     LoginFooter(
-        onEventSent = {}
+        onEventSent = {},
     )
 }
