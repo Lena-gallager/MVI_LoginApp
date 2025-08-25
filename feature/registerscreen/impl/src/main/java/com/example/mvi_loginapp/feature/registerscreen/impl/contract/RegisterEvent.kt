@@ -22,4 +22,6 @@ sealed class RegisterEvent : ViewEvent {
     data class OnSocialMediaClicked(val type: SocialMediaType) : RegisterEvent()
 
     object OnDismissDialog : RegisterEvent()
+
+    object ResetError : RegisterEvent()
 }

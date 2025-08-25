@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":core:uicomponents"))
+    implementation(project(":feature:registerscreen:domain"))
     api(project(":core:viewModel"))
 
     implementation(libs.androidx.core.ktx)

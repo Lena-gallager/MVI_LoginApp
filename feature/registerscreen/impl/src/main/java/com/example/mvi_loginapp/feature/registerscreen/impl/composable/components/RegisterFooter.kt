@@ -35,7 +35,7 @@ fun RegisterFooter(
             modifier = Modifier
                 .fillMaxWidth(),
             text = "Create Account",
-            onClick = {},
+            onClick = { onEventSent(RegisterEvent.CreateAccountClicked) },
         )
         Text(
             text = "Or Continue with",

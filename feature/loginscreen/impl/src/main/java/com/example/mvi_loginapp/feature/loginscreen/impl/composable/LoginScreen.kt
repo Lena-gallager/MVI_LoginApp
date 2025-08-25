@@ -1,12 +1,15 @@
 package com.example.mvi_loginapp.feature.loginscreen.impl.composable
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.core.uicomponents.components.appBar.BaseTopAppBar
@@ -17,6 +20,7 @@ import com.example.mvi_loginapp.feature.loginscreen.impl.composable.components.L
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginEvent
 import com.example.mvi_loginapp.feature.loginscreen.impl.contract.LoginState
 import com.example.mvi_loginapp.feature.loginscreen.impl.data.LoginDialogType
+import com.example.mvi_loginapp.feature.loginscreen.impl.data.LoginErrorType
 
 @Composable
 fun LoginScreen(
@@ -24,8 +28,21 @@ fun LoginScreen(
     state: LoginState,
     onEventSent: (event: LoginEvent) -> Unit,
 ) {
+    val context = LocalContext.current
     val socialMediaDialog: LoginDialogType.SocialMedia? = state.dialogType as? LoginDialogType.SocialMedia
     val passwordChangeDialog: LoginDialogType.PasswordChange? = state.dialogType as? LoginDialogType.PasswordChange
+    val error: LoginErrorType? = state.errorType
+
+    LaunchedEffect(error) {
+        if (error != null) {
+            val text = when (error) {
+                is LoginErrorType.UserNotExists -> "OOooops, user with this login not found"
+                is LoginErrorType.WrongPassword -> "Password (${state.password}) is wrong. Correct password: im kidden i wont show u the correct password"
+            }
+            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+            onEventSent(LoginEvent.ResetError)
+        }
+    }
 
     Column(
         modifier = modifier

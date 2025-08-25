@@ -1,12 +1,15 @@
 package com.example.mvi_loginapp.feature.registerscreen.impl.composable
 
+import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.mvi_loginapp.core.uicomponents.components.appBar.BaseTopAppBar
@@ -17,6 +20,7 @@ import com.example.mvi_loginapp.feature.registerscreen.impl.composable.component
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterEvent
 import com.example.mvi_loginapp.feature.registerscreen.impl.contract.RegisterState
 import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterDialogType
+import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterErrorType
 
 @Composable
 fun RegisterScreen(
@@ -24,7 +28,20 @@ fun RegisterScreen(
     state: RegisterState,
     onEventSent: (event: RegisterEvent) -> Unit,
 ) {
+    val context = LocalContext.current
     val socialMediaDialog: RegisterDialogType.SocialMedia? = state.dialogType as? RegisterDialogType.SocialMedia
+    val error: RegisterErrorType? = state.errorType
+
+    LaunchedEffect(error) {
+        if (error != null) {
+            val text = when (error) {
+                is RegisterErrorType.UserAlreadyExists -> "OOooops, user with this login already exists"
+                is RegisterErrorType.PasswordsNotMatch -> "Dude u couldnt even input two identical passwords"
+            }
+            Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
+            onEventSent(RegisterEvent.ResetError)
+        }
+    }
 
     Column(
         modifier = modifier

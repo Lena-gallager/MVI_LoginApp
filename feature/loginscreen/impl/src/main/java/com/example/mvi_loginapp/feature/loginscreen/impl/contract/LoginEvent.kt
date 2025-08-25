@@ -18,4 +18,6 @@ sealed class LoginEvent : ViewEvent {
     data class OnSocialMediaClicked(val type: SocialMediaType) : LoginEvent()
 
     object OnDismissDialog : LoginEvent()
+
+    object ResetError : LoginEvent()
 }

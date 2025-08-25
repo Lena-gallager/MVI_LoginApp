@@ -2,6 +2,7 @@ package com.example.mvi_loginapp.feature.registerscreen.impl.contract
 
 import com.example.mvi_loginapp.core.viewModel.ViewState
 import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterDialogType
+import com.example.mvi_loginapp.feature.registerscreen.impl.data.RegisterErrorType
 
 data class RegisterState(
     val email: String,
@@ -9,6 +10,7 @@ data class RegisterState(
     val password: String,
     val confirmPassword: String,
     val dialogType: RegisterDialogType?,
+    val errorType: RegisterErrorType?,
 ) : ViewState {
 
     companion object {
@@ -19,6 +21,7 @@ data class RegisterState(
             password = "",
             confirmPassword = "",
             dialogType = null,
+            errorType = null,
         )
     }
 }

@@ -35,7 +35,7 @@ internal fun LoginFooter(
             modifier = Modifier
                 .fillMaxWidth(),
             text = "Login",
-            onClick = {},
+            onClick = { onEventSent(LoginEvent.OnLoginClicked) },
         )
         Text(
             text = "Or Continue with",

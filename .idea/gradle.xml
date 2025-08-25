@@ -19,6 +19,8 @@
             <option value="$PROJECT_DIR$/feature" />
             <option value="$PROJECT_DIR$/feature/loginscreen" />
             <option value="$PROJECT_DIR$/feature/loginscreen/api" />
+            <option value="$PROJECT_DIR$/feature/loginscreen/data" />
+            <option value="$PROJECT_DIR$/feature/loginscreen/domain" />
             <option value="$PROJECT_DIR$/feature/loginscreen/impl" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen" />
             <option value="$PROJECT_DIR$/feature/onboardingscreen/api" />
@@ -26,6 +28,8 @@
             <option value="$PROJECT_DIR$/feature/onboardingscreen/impl" />
             <option value="$PROJECT_DIR$/feature/registerscreen" />
             <option value="$PROJECT_DIR$/feature/registerscreen/api" />
+            <option value="$PROJECT_DIR$/feature/registerscreen/data" />
+            <option value="$PROJECT_DIR$/feature/registerscreen/domain" />
             <option value="$PROJECT_DIR$/feature/registerscreen/impl" />
             <option value="$PROJECT_DIR$/feature/splashscreen" />
             <option value="$PROJECT_DIR$/feature/splashscreen/api" />
